@@ -20,32 +20,69 @@ namespace Setup
         public override void Install(IDictionary stateSaver)
         {
             base.Install(stateSaver);
+            CreateExampleAddInManifest();
+            CreateBuildingCoderManifest();
+            
+        }
+
+        public void CreateExampleAddInManifest() 
+        {
             //create a new addin manifest
             RevitAddInManifest Manifest = new RevitAddInManifest();
 
-            //create an external command
-            RevitAddInCommand command1 = new RevitAddInCommand("full path\\assemblyName.dll",
-                 Guid.NewGuid(), "namespace.className", "Eivind");
-            command1.Description = "description";
-            command1.Text = "display text";
 
-            // this command only visible in Revit MEP, Structure, and only visible 
-            // in Project document or when no document at all
-            command1.Discipline = Discipline.Mechanical | Discipline.Electrical |
-                                    Discipline.Piping | Discipline.Structure;
-            command1.VisibilityMode = VisibilityMode.NotVisibleInFamily;
+            string path = this.Context.Parameters["targetdir"];
+
 
             //create an external application
-            RevitAddInApplication application1 = new RevitAddInApplication("appName",
-                "full path\\assemblyName.dll", Guid.NewGuid(), "namespace.className", "Eivind");
+            RevitAddInApplication application1 = new RevitAddInApplication(
+                "Eivind test",
+                $@"{path}ExampleAddin.dll",
+                Guid.NewGuid(),
+                "ExampleAddIn.Application",
+                "Eivind");
 
             //add both command(s) and application(s) into manifest
-            Manifest.AddInCommands.Add(command1);
             Manifest.AddInApplications.Add(application1);
 
             //save manifest to a file
             RevitProduct revitProduct1 = RevitProductUtility.GetAllInstalledRevitProducts()[0];
             Manifest.SaveAs(revitProduct1.AllUsersAddInFolder + "\\RevitAddInUtilitySample.addin");
         }
+
+        public void CreateBuildingCoderManifest()
+        {
+            //create a new addin manifest
+            RevitAddInManifest Manifest = new RevitAddInManifest();
+
+
+            string path = this.Context.Parameters["targetdir"];
+
+
+            //create an external application
+            RevitAddInApplication application1 = new RevitAddInApplication(
+                "Eivind test",
+                $@"{path}BuildingCoder.dll",
+                Guid.NewGuid(),
+                "BuildingCoder.CmdDemoCheck",
+                "Eivind");
+
+            RevitAddInApplication application2 = new RevitAddInApplication(
+                "Eivind test",
+                $@"{path}BuildingCoder.dll",
+                Guid.NewGuid(),
+                "BuildingCoder.CmdNewArea",
+                "Eivind");
+
+            //add both command(s) and application(s) into manifest
+            Manifest.AddInApplications.Add(application1);
+
+            Manifest.AddInApplications.Add(application2);
+
+            //save manifest to a file
+            RevitProduct revitProduct1 = RevitProductUtility.GetAllInstalledRevitProducts()[0];
+            Manifest.SaveAs(revitProduct1.AllUsersAddInFolder + "\\BuildingCoder.addin");
+        }
+
     }
 }

@@ -33,6 +33,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D095BD71BC0A4E4380F65A0BBE1C21CB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DA7AFCD0E3454889A971B55F8CBE497D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A0739E8B63614DAFA2FD9DFD72F569C3"
         "MsmSig" = "8:_UNDEFINED"
@@ -112,6 +124,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -130,6 +150,20 @@
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
             "Identifier" = "8:_F1E041AD_AA76_42D5_8B35_830C15595E63"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:/targetdir=\"[TARGETDIR]\\\""
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_4864BED0AAE64FC1A80940C74ED007C1"
+            {
+            "Name" = "8:Primary output from StartRevit (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_DA7AFCD0E3454889A971B55F8CBE497D"
+            "FileType" = "3:1"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_14B22050_0CEE_4AEA_AF76_A5033472A717"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -275,7 +309,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Installer"
         "ProductCode" = "8:{2CBE6C42-39FB-461D-A561-042C90899282}"
-        "PackageCode" = "8:{6C4763C3-8349-4CD4-828F-6B516444D47D}"
+        "PackageCode" = "8:{9AA47D49-51C7-4FBC-82D5-986EFB3D55D9}"
         "UpgradeCode" = "8:{044F4D73-C924-4E45-AB4A-003989844E53}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -283,12 +317,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Eivind"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Installer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Eivind Egholm Vørmadal"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -824,7 +858,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A0739E8B63614DAFA2FD9DFD72F569C3"
             {
-            "SourcePath" = "8:"
+            "SourcePath" = "8:..\\ExampleAddIn\\obj\\x64\\Release\\ExampleAddIn.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9DAA188161274F8A9C29B5A567BBB98E"
@@ -845,6 +879,62 @@
             "OutputConfiguration" = "8:Release|x64"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{E12E4CEE-12B6-4E13-92F1-AD2FF7DE8604}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D095BD71BC0A4E4380F65A0BBE1C21CB"
+            {
+            "SourcePath" = "8:..\\BuildingCoder\\obj\\Debug\\net48\\BuildingCoder.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_9DAA188161274F8A9C29B5A567BBB98E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{E3CAF834-ACE0-432E-8DEF-450DAED6DF04}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DA7AFCD0E3454889A971B55F8CBE497D"
+            {
+            "SourcePath" = "8:..\\StartRevit\\obj\\Debug\\net5.0\\StartRevit.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_9DAA188161274F8A9C29B5A567BBB98E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{D07B7435-B928-4CCD-BB76-610D7DDF6694}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
