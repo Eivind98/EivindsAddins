@@ -21,7 +21,7 @@ namespace Setup
         {
             base.Install(stateSaver);
             CreateExampleAddInManifest();
-            CreateBuildingCoderManifest();
+            //CreateBuildingCoderManifest();
             
         }
 

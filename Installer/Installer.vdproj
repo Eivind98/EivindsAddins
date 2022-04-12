@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_31E3644F4E424B9EB7F9A8AD8F9001D8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_33F8C1922CDF59C24BFBF42F05367822"
         "OwnerKey" = "8:_4B85755BC502438DBF38E6DA74BB4C67"
         "MsmSig" = "8:_UNDEFINED"
@@ -27,19 +33,13 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_490263148AF48013A1A68B3C6BA69B9C"
+        "OwnerKey" = "8:_31E3644F4E424B9EB7F9A8AD8F9001D8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4B85755BC502438DBF38E6DA74BB4C67"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D095BD71BC0A4E4380F65A0BBE1C21CB"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DA7AFCD0E3454889A971B55F8CBE497D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -47,6 +47,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A0739E8B63614DAFA2FD9DFD72F569C3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_31E3644F4E424B9EB7F9A8AD8F9001D8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -153,18 +159,18 @@
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:/targetdir=\"[TARGETDIR]\\\""
             }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_4864BED0AAE64FC1A80940C74ED007C1"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_3D869E9F7F2849728EB01547AE9AB141"
             {
-            "Name" = "8:Primary output from StartRevit (Active)"
+            "Name" = "8:Primary output from AfterInstall (Active)"
             "Condition" = "8:"
-            "Object" = "8:_DA7AFCD0E3454889A971B55F8CBE497D"
-            "FileType" = "3:1"
+            "Object" = "8:_31E3644F4E424B9EB7F9A8AD8F9001D8"
+            "FileType" = "3:2"
             "InstallAction" = "3:2"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_14B22050_0CEE_4AEA_AF76_A5033472A717"
-            "InstallerClass" = "11:TRUE"
+            "Identifier" = "8:_1719568A_B233_45DF_88F5_A01E384B1C0C"
+            "InstallerClass" = "11:FALSE"
             "CustomActionData" = "8:"
             }
         }
@@ -185,6 +191,16 @@
                 "FrameworkVersion" = "8:.NETFramework,Version=v4.8"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
+                }
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_F5D7D5205234480DBA01DD2898682090"
+                {
+                "Name" = "8:.NET Core"
+                "Message" = "8:[VSDNETCOREMSG]"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
+                "IsNETCore" = "11:TRUE"
+                "Architecture" = "2:0"
+                "Runtime" = "2:0"
                 }
             }
         }
@@ -309,7 +325,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Installer"
         "ProductCode" = "8:{2CBE6C42-39FB-461D-A561-042C90899282}"
-        "PackageCode" = "8:{9AA47D49-51C7-4FBC-82D5-986EFB3D55D9}"
+        "PackageCode" = "8:{1DFCE878-D042-4499-958F-549391F853C2}"
         "UpgradeCode" = "8:{044F4D73-C924-4E45-AB4A-003989844E53}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -828,6 +844,34 @@
         }
         "ProjectOutput"
         {
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_31E3644F4E424B9EB7F9A8AD8F9001D8"
+            {
+            "SourcePath" = "8:..\\AfterInstall\\obj\\Debug\\AfterInstall.exe"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_9DAA188161274F8A9C29B5A567BBB98E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{37574217-4B79-4B73-9030-0B386E177394}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_4B85755BC502438DBF38E6DA74BB4C67"
             {
             "SourcePath" = "8:..\\Setup\\obj\\Debug\\Setup.dll"
@@ -858,7 +902,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A0739E8B63614DAFA2FD9DFD72F569C3"
             {
-            "SourcePath" = "8:..\\ExampleAddIn\\obj\\x64\\Release\\ExampleAddIn.dll"
+            "SourcePath" = "8:"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9DAA188161274F8A9C29B5A567BBB98E"
@@ -879,62 +923,6 @@
             "OutputConfiguration" = "8:Release|x64"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{E12E4CEE-12B6-4E13-92F1-AD2FF7DE8604}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D095BD71BC0A4E4380F65A0BBE1C21CB"
-            {
-            "SourcePath" = "8:..\\BuildingCoder\\obj\\Debug\\net48\\BuildingCoder.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_9DAA188161274F8A9C29B5A567BBB98E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{E3CAF834-ACE0-432E-8DEF-450DAED6DF04}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DA7AFCD0E3454889A971B55F8CBE497D"
-            {
-            "SourcePath" = "8:..\\StartRevit\\obj\\Debug\\net5.0\\StartRevit.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_9DAA188161274F8A9C29B5A567BBB98E"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{D07B7435-B928-4CCD-BB76-610D7DDF6694}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
