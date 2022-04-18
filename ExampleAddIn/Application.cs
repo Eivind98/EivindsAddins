@@ -29,6 +29,8 @@ namespace ExampleAddIn
 
             // Add a new ribbon panel
             RibbonPanel ribbonPanelIFC = application.CreateRibbonPanel(tabName, "IFC Tools");
+            RibbonPanel ribbonPanelMisc = application.CreateRibbonPanel(tabName, "Misc");
+
 
             // Get dll assembly path
             string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
@@ -62,6 +64,17 @@ namespace ExampleAddIn
                 "Settings for IFC Export",
                 "D:/WorkspacesCsharp/EivindsAddins/ExampleAddIn/Logos/Settings for IFC Export.png",
                 ribbonPanelIFC
+                );
+
+
+            Helper.CreateButton(
+                "cmdDoorOrientation",
+                "Door Ori",
+                thisAssemblyPath,
+                "ExampleAddIn.DoorOrientation",
+                "Testing stuff",
+                "D:/WorkspacesCsharp/EivindsAddins/ExampleAddIn/Logos/Settings for IFC Export.png",
+                ribbonPanelMisc
                 );
 
 

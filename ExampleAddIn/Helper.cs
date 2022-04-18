@@ -68,6 +68,10 @@ namespace ExampleAddIn
 
         }
 
+
+        
+
+
         public static void HideElem(View v, List<Element> element)
         {
             
@@ -204,6 +208,7 @@ namespace ExampleAddIn
 
         }
 
+        
 
     }
 }
