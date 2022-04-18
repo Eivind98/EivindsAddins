@@ -55,6 +55,7 @@
     <Reference Include="Autodesk.IFC.Export.UI">
       <HintPath>C:\Program Files\Autodesk\Revit 2022\AddIns\IFCExporterUI\Autodesk.IFC.Export.UI.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="Revit.IFC.Common">
       <HintPath>C:\Program Files\Autodesk\Revit 2022\Revit.IFC.Common.dll</HintPath>
     </Reference>
@@ -74,6 +75,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -84,8 +87,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="ExportIFC.cs" />
+    <Compile Include="IFCSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Logos\IFC Export Icon.png" />
+    <Content Include="Logos\Settings for IFC Export.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

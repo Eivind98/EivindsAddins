@@ -34,7 +34,12 @@ namespace ExampleAddIn
                 Document doc = uidoc.Document;
 
                 //Create an Instance of the IFC Export Class
-                IFCExportOptions IFCExportOptions = new IFCExportOptions();
+                IFCExportOptions IFCExportOpt = new IFCExportOptions();
+
+                //assigning IFC export option to use IFC4 
+                IFCExportOpt.FileVersion = IFCVersion.IFC4;
+                //IFCExportOpt.FilterViewId = 
+
 
                 //Create an instance of the IFC Export Configuration Class
                 BIM.IFC.Export.UI.IFCExportConfiguration myIFCExportConfiguration = BIM.IFC.Export.UI.IFCExportConfiguration.CreateDefaultConfiguration();
@@ -48,28 +53,35 @@ namespace ExampleAddIn
                 ElementId ExportViewId = doc.ActiveView.Id;
 
                 //Pass the setting of the myIFCExportConfiguration to the IFCExportOptions
-                myIFCExportConfiguration.UpdateOptions(IFCExportOptions, ExportViewId);
+                myIFCExportConfiguration.UpdateOptions(IFCExportOpt, ExportViewId);
 
                 //Define the output Directory for the IFC Export
-                string directory = Path.GetDirectoryName(doc.PathName);
+                string directory = Path.GetDirectoryName(doc.PathName) + "/Export/IFC";
+
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
 
                 using (var tx = new Transaction(doc))
                 {
 
                     tx.Start("Exporting to IFC");
 
-                    //var els = GetLinkedElements(doc);
-
-                    //ShowMessage("Linked: " + string.Join(", ", els));
                     
-                    //Process the IFC Export
-                    doc.Export(directory, $"{Guid.NewGuid()}-{doc.Title}", IFCExportOptions);
+                    doc.Export(directory, $"{doc.Title}", IFCExportOpt);
 
                     tx.RollBack();
                 }
 
+            }
+            else
+            {
+                UIApplication uiapp = commandData.Application;
+                UIDocument uidoc = uiapp.ActiveUIDocument;
+                Document doc = uidoc.Document;
 
-
+                TaskDialog.Show("Friendly Reminder", "Needs a 3D view to work");
             }
 
             return Result.Succeeded;
@@ -77,15 +89,15 @@ namespace ExampleAddIn
 
         private void ShowMessage(string message)
         {
-            TaskDialog mainDialog = new TaskDialog("Hello, Revit!");
-            mainDialog.MainInstruction = "Hello, Revit!";
+            TaskDialog mainDialog = new TaskDialog("Hello, Revit!1");
+            mainDialog.MainInstruction = "Hello, Revit!2";
             mainDialog.MainContent = message;
 
             // Add commmandLink options to task dialog
             mainDialog.AddCommandLink(TaskDialogCommandLinkId.CommandLink1,
-                                      "View information about the Revit installation");
+                                      "View information about the Revit installation3");
             mainDialog.AddCommandLink(TaskDialogCommandLinkId.CommandLink2,
-                                      "View information about the active document");
+                                      "View information about the active document4");
 
             // Set common buttons and default button. If no CommonButton or CommandLink is added,
             // task dialog will show a Close button by default

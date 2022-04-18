@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using System.Windows.Media.Imaging;
 
 namespace ExampleAddIn
 {
@@ -27,21 +28,53 @@ namespace ExampleAddIn
             application.CreateRibbonTab(tabName);
 
             // Add a new ribbon panel
-            RibbonPanel ribbonPanel = application.CreateRibbonPanel(tabName, "Tools");
+            RibbonPanel ribbonPanelIFC = application.CreateRibbonPanel(tabName, "IFC Tools");
 
             // Get dll assembly path
             string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
 
-            // create push button for Export to IFC
-            PushButtonData b1Data = new PushButtonData(
-                "cmdExportIFC",
-                "Export IFC",
-                thisAssemblyPath,
-                "ExampleAddIn.ExportIFC");
+            /*
+             * CreateButton Helper!
+             * Name is the name of PushButtonData
+             * Text is the text under the button not necessary
+             * AssemblyName is something
+             * ClassName is the path/ClassName the button runs
+             * ToolTip is a helper for the user to use the button
+             * PathForImage is the path to the logo used for the button
+             * RibbonPanelName is the name of the Ribbon the button should be in
+             */
 
-            PushButton pb1 = ribbonPanel.AddItem(b1Data) as PushButton;
-            pb1.ToolTip = "Go to 3D view You want to export";
-            //BitmapImage pb1Image = new BitmapImage(new Uri("pack://application:,,,/GrimshawRibbon;component/Resources/totalLength.png"));
+            Helper.CreateButton(
+                "cmdExportIFC", 
+                "Export IFC", 
+                thisAssemblyPath, 
+                "ExampleAddIn.ExportIFC", 
+                "Go to 3D view You want to export", 
+                "D:/WorkspacesCsharp/EivindsAddins/ExampleAddIn/Logos/IFC Export Icon.png",
+                ribbonPanelIFC
+                );
+
+            Helper.CreateButton(
+                "cmdIFCSettings",
+                "Settings",
+                thisAssemblyPath,
+                "ExampleAddIn.IFCSettings",
+                "Settings for IFC Export",
+                "D:/WorkspacesCsharp/EivindsAddins/ExampleAddIn/Logos/Settings for IFC Export.png",
+                ribbonPanelIFC
+                );
+
+
+            // create push button for Export to IFC
+            //PushButtonData b1Data = new PushButtonData(
+            //    "cmdExportIFC",
+            //    "Export IFC",
+            //    thisAssemblyPath,
+            //    "ExampleAddIn.ExportIFC");
+
+            //PushButton pb1 = ribbonPanel.AddItem(b1Data) as PushButton;
+            //pb1.ToolTip = "Go to 3D view You want to export";
+            //BitmapImage pb1Image = new BitmapImage(new Uri("D:/WorkspacesCsharp/EivindsAddins/ExampleAddIn/Logos/IFC Export Icon.png"));
             //pb1.LargeImage = pb1Image;
             return Result.Succeeded;
         }
