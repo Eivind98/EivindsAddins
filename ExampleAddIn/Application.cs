@@ -29,8 +29,9 @@ namespace ExampleAddIn
 
             // Add a new ribbon panel
             RibbonPanel ribbonPanelIFC = application.CreateRibbonPanel(tabName, "IFC Tools");
+            RibbonPanel ribbonPanel4D = application.CreateRibbonPanel(tabName, "4D");
             RibbonPanel ribbonPanelMisc = application.CreateRibbonPanel(tabName, "Misc");
-
+            
 
             // Get dll assembly path
             string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
@@ -66,17 +67,27 @@ namespace ExampleAddIn
                 ribbonPanelIFC
                 );
 
+            Helper.CreateButton(
+                "cmd4DPrototyping",
+                "4D Prototyping",
+                thisAssemblyPath,
+                "ExampleAddIn.FourDPlanning",
+                "4D planning Prototype button",
+                "D:/WorkspacesCsharp/EivindsAddins/ExampleAddIn/Logos/Test Button.png",
+                ribbonPanel4D
+                );
 
             Helper.CreateButton(
                 "cmdDoorOrientation",
                 "Door Ori",
                 thisAssemblyPath,
                 "ExampleAddIn.DoorOrientation",
-                "Testing stuff",
-                "D:/WorkspacesCsharp/EivindsAddins/ExampleAddIn/Logos/Settings for IFC Export.png",
+                "Will apply H or V to doors depending on their orientation",
+                "D:/WorkspacesCsharp/EivindsAddins/ExampleAddIn/Logos/Door Orientation.png",
                 ribbonPanelMisc
                 );
 
+            
 
             // create push button for Export to IFC
             //PushButtonData b1Data = new PushButtonData(

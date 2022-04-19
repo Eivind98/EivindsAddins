@@ -16,9 +16,6 @@ namespace ExampleAddIn
     [TransactionAttribute(TransactionMode.Manual)]
     public class DoorOrientation : Autodesk.Revit.UI.IExternalCommand
     {
-
-
-
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
             UIApplication uiapp = commandData.Application;
@@ -27,82 +24,45 @@ namespace ExampleAddIn
 
             ElementId ViewId = doc.ActiveView.Id;
 
-            var view = commandData.Application.ActiveUIDocument.ActiveView as View3D;
-
-            var instance = new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance));
-
             IList<Element> elementsInActiveView = new FilteredElementCollector(doc, ViewId).OfCategory(BuiltInCategory.OST_Doors).ToElements();
-
-
-
-
-
-
-            //IList<ElementId> elementsInActive = new FilteredElementCollector(doc).OfCategory(BuiltInCategory.OST_Doors).ToElementIds();
-
-
-
 
 
             for (int i = 0; i < elementsInActiveView.Count; i++)
             {
 
+                ElementId ele = elementsInActiveView[i].Id;
+                FamilyInstance elementInstance = (FamilyInstance)doc.GetElement(ele);
 
+                Transaction tx = new Transaction(doc, "Assign Value to Door Parameter H/V");
+                tx.Start();
 
-                
-
-                    ElementId ele = elementsInActiveView[i].Id;
-                    FamilyInstance elementInstance = (FamilyInstance)doc.GetElement(ele);
-
-                    Transaction tx = new Transaction(doc, "Do Door Stuff");
-                    tx.Start();
-
-                    try
+                try
+                {
+                    Parameter pa = elementInstance.LookupParameter("H/V");
+                    
+                    if (elementInstance.HandFlipped == elementInstance.FacingFlipped)
                     {
-
-                        Parameter pa = elementInstance.LookupParameter("H/V");
-
-                        if (elementInstance.HandFlipped)
-                        {
-                            pa.Set("H");
-                        }
-                        else
-                        {
-                            pa.Set("V");
-                        }
-                        tx.Commit();
+                        pa.Set("V");
+                        
                     }
-                    catch
+                    else
                     {
-                        tx.RollBack();
+                        pa.Set("H");
+                        
                     }
-
-
-                
-                
-
-
-
+                    tx.Commit();
+                }
+                catch
+                {
+                    tx.RollBack();
+                }
             }
 
+            //Troubleshooting
             TaskDialog.Show("Yoyo", string.Join("\n", elementsInActiveView));
-
-
-
-
-
-
-
-
 
 
             return Result.Succeeded;
         }
-
-
-
-
-
-
     }
 }

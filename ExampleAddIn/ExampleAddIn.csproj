@@ -91,12 +91,15 @@
     <Compile Include="Helper.cs" />
     <Compile Include="ExportIFC.cs" />
     <Compile Include="IFCSettings.cs" />
+    <Compile Include="FourDPlanning.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Logos\Door Orientation.png" />
     <Content Include="Logos\IFC Export Icon.png" />
     <Content Include="Logos\Settings for IFC Export.png" />
+    <Content Include="Logos\Test Button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
